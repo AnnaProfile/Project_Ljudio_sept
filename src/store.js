@@ -3,7 +3,8 @@ import { createStore } from "vuex"
 const store = createStore({
 
    state:{
-       
+        searchText:"",
+        resultList:[],
         playList: [{
             "type": "artist",
             "browseId": "UCFgmnaNfKY__G1kuW2uuPng",
@@ -36,10 +37,24 @@ const store = createStore({
         loadArticles(state, data){
             state.articles = data
         },
+        updateSearchText(state, data) {
+            state.searchText = data;
+            this.fetchResultList;
+          },
         
    },
 
    actions:{
+
+    async fetchResultList() {
+        console.log('Search text is: '+this.state.searchText)
+        const url ='https://yt-music-api.herokuapp.com/api/yt/songs/' + this.state.searchText
+        
+        await axios.get(url)
+        .then(response => {
+         this.commit("resultList", response.data) 
+        })
+      },
 
    }
 })

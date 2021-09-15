@@ -6,8 +6,8 @@
     <button @click="pause()">Pause</button>
   -->
   <p>
-     <div v-for="song in listToPlay" :key="song.browseId">
-      {{song.browseId}}
+     <div v-for="song in listToPlay" :key="song.videoId">
+      {{song.videoId}}
            {{song.name}}
         </div>
   </p>
@@ -28,6 +28,10 @@ export default {
     }
   },
   computed:{
+            resultList(){
+              return this.$store.state.resultList 
+            },
+            
             listToPlay(){
                 return this.$store.state.playList
             }
