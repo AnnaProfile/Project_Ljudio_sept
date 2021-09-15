@@ -5,6 +5,7 @@
     <nav>
       <router-link to="/">Home</router-link> |
       <router-link to="/music">Music</router-link> |
+      <router-link to="/player">Player</router-link> |
     </nav>
     <h1>Project</h1>
     <router-view/>
