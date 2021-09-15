@@ -5,10 +5,17 @@
     <button @click="play('CtkZxnkbjtI')">The Black Page #2 live band</button>
     <button @click="pause()">Pause</button>
   -->
+  <p>
+     <div v-for="song in listToPlay" :key="song.browseId">
+      {{song.browseId}}
+           {{song.name}}
+        </div>
+  </p>
   </div>
 </template>
 
 <script>
+
 export default {
   methods:{
     play(id){
@@ -19,6 +26,11 @@ export default {
     pause(){
       window.player.pauseVideo()
     }
-  }
+  },
+  computed:{
+            listToPlay(){
+                return this.$store.state.playList
+            }
+        }
 }
 </script>

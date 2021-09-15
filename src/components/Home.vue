@@ -1,10 +1,7 @@
 <template>
 <div>
 <h1>Home!!</h1>
-<div>
-    <SongCard/>
-    
-</div>
+
 <div>
     <Player/>
 </div>
@@ -14,12 +11,11 @@
 
 <script>
 
-import SongCard from "./SongCard.vue";
 import Player from "./Player.vue";
 
 export default {
   name: "Home",
-  components: { SongCard, Player},
+  components: { Player},
   computed: {},
   methods: {},
   mounted() {
