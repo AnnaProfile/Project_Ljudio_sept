@@ -1,13 +1,6 @@
 <template>
   <!-- eslint-disable-next-line -->
-  <div>
-  <input
-    type="text"
-    id="search"
-    placeholder="find a song"
-    />
-    <button @click="updateSearchText"></button>
-  </div>
+  
 </template>
 
 <script>

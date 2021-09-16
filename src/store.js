@@ -1,10 +1,11 @@
 import { createStore } from "vuex" 
+import axios from "axios";
 
 const store = createStore({
 
    state:{
         searchText:"",
-        resultList:[],
+      
         playList: [{
             "type": "artist",
             "browseId": "UCFgmnaNfKY__G1kuW2uuPng",
