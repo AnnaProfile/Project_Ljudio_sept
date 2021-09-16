@@ -1,16 +1,10 @@
 <template>
 <div>
 <h1>Home!!</h1>
-<div>
-    <SearchBox />
-</div>
+
 <div>
   <ul>
-     <div v-for="song in resultList" :key="song.videoId">
-      {{song.videoId}}
-           {{song.name}}
-           {{song.artist.name}}
-        </div>
+
   </ul>
 </div>
 <div>
@@ -24,18 +18,17 @@
 <script>
 
 import Player from "./Player.vue";
-import SearchBox from "./SearchBox.vue";
+import MusicCard from "./MusicCard.vue";
 
 export default {
   name: "Home",
-  components: { Player, SearchBox},
+  components: { Player, MusicCard },
   computed: {
-     resultList(){
-              return this.$store.state.resultList 
-              
-            },
+   
   },
-  methods: {},
+  methods: {
+    
+  },
   mounted() {
     
   },

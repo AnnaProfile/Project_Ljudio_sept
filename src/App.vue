@@ -1,14 +1,19 @@
 
 
 <template>
+
   <div>
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/music">Music</router-link> |
-       <router-link to="/player">Player</router-link> |
-    </nav>
-    <h1>Ljudio_Anna</h1>
-    <router-view/>
+     <div>
+     <img class="logo" alt="logo" src="./assets/logoLjudio.jpg" />
+    </div>
+    <div>
+      <nav>
+        <router-link to="/">Home</router-link> |
+        <router-link to="/music">Music</router-link> |
+        <router-link to="/player">Player</router-link> |
+      </nav>
+        <router-view/>
+    </div>
   </div>
 </template>
 
@@ -26,7 +31,13 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 30px;
-  background-color: aqua;
+  background-color: rgb(170, 196, 196);
   
 }
+.logo{
+  
+  width: 10%;
+}
+
+
 </style>

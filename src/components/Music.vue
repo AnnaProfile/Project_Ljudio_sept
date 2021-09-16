@@ -1,19 +1,24 @@
 <template>
 
 <div>
-    <h1>Find some music</h1>
- <!-- <input
-    @change="updateSearchText()"
+    <h1>Find some music on Ljudio</h1>
+    <input
     v-model="search"
     class="search-bar"
     type="text"
-    placeholder="find a song"
-    />
-    <label>Search your song:</label> -->
+    placeholder="find a song"/>
+    <button @click="myResultList()">search</button>
+ 
+    <label>Search your song:</label> 
+    <br>
+   {{this.searchText}}
+     <br>
+     <br>
 
-    <button @click="fetchResultList()">Test</button>
-    <div>{{fetchResultList}}</div>
-
+    <li v-for="item in resultList.content" :key="item.videoId">
+    {{ item.name }}
+    </li>
+   
     
     
  </div>
@@ -21,34 +26,47 @@
 </template>
 
 <script>
+import axios from "axios";
 
 export default{
-    data() {
+  name:"Music",
+  
+
+  data() {
         return{
-          resultList:["sång1", "sång2"],
-          searchText:"mamma",
+          resultList:[],
+          searchText: ""
         }
 
     },
-     /*computed: {
-        async fetchResultList() {
+     computed: {
+
+
+       search: { 
+         set(value){ this.searchText=value } ,
+         get(){return this.searchText}
+         
+       },
+      
+      
+     },
+
+     methods: {
+
+       async myResultList() {
         const url ='https://yt-music-api.herokuapp.com/api/yt/songs/' + this.searchText
         
         await axios.get(url)
         .then((response) => {
          this.resultList = response.data 
         })
-
-        return this.resultList;
+        }
         
       },
+    
+    
 
-     },*/
-
-     methods: {
-    updateSearchText(e) {
-      this.commit(searchText, e.target.value);
-    },
+    
        /* async fetchResultList() {
         console.log('Search text is:' )
 
@@ -64,7 +82,10 @@ export default{
  
      
       
-},
+
+mounted(){
+      this.myResultList
+    }
   
 
    
