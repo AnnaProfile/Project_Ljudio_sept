@@ -1,7 +1,7 @@
 <template>
 
 <div>
-    <h1>Find some music on Ljudio</h1>
+
     <input
     v-model="search"
     class="search-bar"
@@ -14,11 +14,11 @@
    {{this.searchText}}
      <br>
      <br>
-
-    <li v-for="item in resultList.content" :key="item.videoId">
-    {{ item.name }}
-    </li>
+  <div class="list-music" >
+    <MusicCard  v-for="(music, i) in resultList.content" :key="music.videoId+i" :music="music"/>
+    <h2>test</h2>
    
+  </div>
     
     
  </div>
@@ -27,9 +27,13 @@
 
 <script>
 import axios from "axios";
+import MusicCard from "./MusicCard.vue";
 
 export default{
   name:"Music",
+  components:{
+    MusicCard
+  },
   
 
   data() {
