@@ -1,27 +1,34 @@
 <template>
 <div>
 <h1>Home!!</h1>
+
 <div>
-    <SongCard/>
-    
+  <ul>
+
+  </ul>
 </div>
 <div>
     <Player/>
 </div>
+
 </div>
   
 </template>
 
 <script>
 
-import SongCard from "./SongCard.vue";
 import Player from "./Player.vue";
+import MusicCard from "./MusicCard.vue";
 
 export default {
   name: "Home",
-  components: { SongCard, Player},
-  computed: {},
-  methods: {},
+  components: { Player, MusicCard },
+  computed: {
+   
+  },
+  methods: {
+    
+  },
   mounted() {
     
   },
