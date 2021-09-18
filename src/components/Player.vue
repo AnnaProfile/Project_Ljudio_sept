@@ -8,6 +8,9 @@
 
 <script>
 export default {
+
+  props: ["song"],
+  
   methods:{
     play(id){
       // calling global variable

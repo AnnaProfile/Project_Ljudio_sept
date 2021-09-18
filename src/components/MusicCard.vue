@@ -1,5 +1,5 @@
 <template>
-<div class="music-card" @click="">
+<div class="music-card" >
 <div class="tumbnail">
     <img
         v-if="music.thumbnails.length > 0"
@@ -12,13 +12,26 @@
         {{music.artist.name}}
     </h2>
 </div>
+<div>
+    <Player/>
+</div>
+
 
 
 </div>
 </template>
 
 <script>
+
+
+import Player from "./Player.vue";
+
 export default {
+  name: "MusicCard",
+  components:{
+    Player
+  },
+
   props: ["music"],
 
   methods: {
