@@ -10,14 +10,10 @@
     <button @click="myResultList()">search</button>
  
     <label>Search your song:</label> 
-    <br>
-   {{this.searchText}}
-     <br>
+  
      <br>
   <div class="list-music" >
     <MusicCard  v-for="(music, i) in resultList.content" :key="music.videoId+i" :music="music"/>
-    <h2>test</h2>
-   
   </div>
     
     
