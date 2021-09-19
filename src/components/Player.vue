@@ -1,7 +1,7 @@
 <template>
   <div>
-    <button @click="play('bSnlKl_PoQU')">The Black Page #1 on piano</button>
-    
+    <h2>{{currentMusicObject.name}}</h2>
+    <button @click="play(currentMusicObject.videoId)">Play</button>
     <button @click="pause()">Pause</button>
   </div>
 </template>
@@ -20,6 +20,11 @@ export default {
     pause(){
       window.player.pauseVideo()
     }
+  },
+  computed:{
+    currentMusicObject() {
+      return this.$store.getters.getMusicObject;
+    },
   }
 }
 </script>

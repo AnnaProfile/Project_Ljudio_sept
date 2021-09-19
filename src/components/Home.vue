@@ -14,11 +14,12 @@
 
 <script>
 
+
 import MusicCard from "./MusicCard.vue";
 
 export default {
   name: "Home",
-  components: { MusicCard },
+  components: { MusicCard},
   computed: {
    
   },
