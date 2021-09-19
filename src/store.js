@@ -7,15 +7,21 @@ const store = createStore({
         searchText:"",
        // resultList: [],
       
-        playList: []
+        playList: [],
+        musicObject:{}
       
    },
+ 
 
    mutations:{
 
-        addPlayList(state, data){
-            state.playList.push(data)
-        },
+       // addPlayList(state, data){
+     //       state.playList.push(data)
+       // },
+        setMusicObject(state, payload) {
+           state.musicObject = payload;
+           state.playList.push(payload);
+         },
      /*   updateSearchText(state, data) {
             state.searchText = data;
             this.fetchResultList;
@@ -41,6 +47,11 @@ const store = createStore({
 
 
 getters: {
+
+   
+      getMusicObject(state) {
+        return state.musicObject;
+      },
 
    /* getResultList() {
       return this.resultList;

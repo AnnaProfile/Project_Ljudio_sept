@@ -1,5 +1,5 @@
 <template>
-<div class="music-card" @click="">
+<div @click="playMusic()" class="music-card" >
 <div class="tumbnail">
     <img
         v-if="music.thumbnails.length > 0"
@@ -7,23 +7,36 @@
       />
 </div>
 <div class="music-info">
-    <h2>
+    <h3>
         {{music.name}}
         {{music.artist.name}}
-    </h2>
+    </h3>
 </div>
+<!--<div>
+    <Player v-for="(song) in music" :key="song.videoId" :song="song"/>/>
+</div>>
+-->
 
 
 </div>
 </template>
 
 <script>
+
+
+import Player from "./Player.vue";
+
 export default {
+  name: "MusicCard",
+  components:{
+    Player
+  },
+
   props: ["music"],
 
   methods: {
     playMusic() {
-      
+         this.$store.commit("setMusicObject", this.music);   
     },
   },
   mounted() {},
@@ -33,8 +46,12 @@ export default {
 
 <style>
 .music-card{
-    width: 20vh;
+    width: 10vh;
     height: auto;
+}
+.thumbnail{
+  width: 8vh;
+  height: 8vh;
 }
 
 </style>

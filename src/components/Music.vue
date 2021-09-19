@@ -8,16 +8,14 @@
     type="text"
     placeholder="find a song"/>
     <button @click="myResultList()">search</button>
- 
-    <label>Search your song:</label> 
-    <br>
-   {{this.searchText}}
-     <br>
+   <label>Search your song:</label> 
+   <div>
+     <Player/>
+   </div>
+   
      <br>
   <div class="list-music" >
     <MusicCard  v-for="(music, i) in resultList.content" :key="music.videoId+i" :music="music"/>
-    <h2>test</h2>
-   
   </div>
     
     
@@ -28,11 +26,13 @@
 <script>
 import axios from "axios";
 import MusicCard from "./MusicCard.vue";
+import Player from "./Player.vue";
+
 
 export default{
   name:"Music",
   components:{
-    MusicCard
+    MusicCard, Player 
   },
   
 
@@ -67,22 +67,6 @@ export default{
         }
         
       },
-    
-    
-
-    
-       /* async fetchResultList() {
-        console.log('Search text is:' )
-
-       const url ='https://yt-music-api.herokuapp.com/api/yt/songs/' + this.state.searchText
-        
-        await axios.get(url)
-        .then((response) => {
-         this.resultList = response.data 
-        })
-        return this.searchText;
-        
-      },*/
  
      
       
@@ -90,10 +74,13 @@ export default{
 mounted(){
       this.myResultList
     }
-  
-
-   
            
 
 }
 </script>
+<style>
+.list-music{
+  display: flex;
+  flex-direction: column;
+}
+</style>
