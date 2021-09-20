@@ -7,15 +7,14 @@
       />
 </div>
 <div class="music-info">
-    <h3>
-        {{music.name}}
-        {{music.artist.name}}
-    </h3>
+     <div>
+       {{music.name}}
+      </div>  
+     <div>
+       {{music.artist.name}}
+     </div>  
 </div>
-<!--<div>
-    <Player v-for="(song) in music" :key="song.videoId" :song="song"/>/>
-</div>>
--->
+
 
 
 </div>
@@ -27,7 +26,9 @@
 import Player from "./Player.vue";
 
 export default {
+
   name: "MusicCard",
+  
   components:{
     Player
   },
@@ -44,14 +45,25 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .music-card{
     width: 10vh;
-    height: auto;
+    height: 20vh;
+    border-style: solid;
+    background-color: gray;
 }
-.thumbnail{
-  width: 8vh;
-  height: 8vh;
+.music-info{
+  display: flex;
+  flex-direction: column;
+  font-size: 2vh;
+  width: 100%;
 }
+img{
+  
+  width: 10vh;
+  height: 10vh;
+ 
+}
+
 
 </style>
