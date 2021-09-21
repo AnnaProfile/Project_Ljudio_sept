@@ -6,7 +6,6 @@ const store = createStore({
    state:{
         searchText:"",
        // resultList: [],
-      
         playList: [],
         musicObject:{},
         artistId:"",
@@ -34,7 +33,7 @@ const store = createStore({
    },
 
    actions:{
-    /*async fetchArtistObject(context) {
+    async fetchArtistObject(context) {
       const url ='https://yt-music-api.herokuapp.com/api/yt/artist/' + this.artistId
         
       await axios.get(url)
@@ -42,16 +41,14 @@ const store = createStore({
        this.artistObject = response.data 
       })
       
-      },*/
+      },
 
   
    },
    
 
 
-getters: {
-
-   
+getters: {   
       getMusicObject(state) {
         return state.musicObject;
       },
@@ -60,9 +57,7 @@ getters: {
       },
       getArtistObject(state){
         return state.artistObject;
-      }
-
-   
+      }  
 }
 })
 

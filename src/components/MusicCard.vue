@@ -47,16 +47,13 @@ export default {
 
 <style scoped>
 .music-card{
-    width: 10vh;
-    height: 20vh;
+    margin-left: 20%;
+    margin-right: 20%;
     border-style: solid;
     background-color: gray;
 }
 .music-info{
-  display: flex;
-  flex-direction: column;
-  font-size: 2vh;
-  width: 100%;
+  
 }
 img{
   

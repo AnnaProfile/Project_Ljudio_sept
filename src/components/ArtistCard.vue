@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-.music-card{
+/*.music-card{
     width: 10vh;
     height: 20vh;
     border-style: solid;
@@ -58,7 +58,7 @@ export default {
   flex-direction: column;
   font-size: 2vh;
   width: 100%;
-}
+}*/
 img{
   
   width: 10vh;
