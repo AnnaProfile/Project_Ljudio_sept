@@ -52,9 +52,7 @@ export default {
     border-style: solid;
     background-color: gray;
 }
-.music-info{
-  
-}
+
 img{
   
   width: 10vh;
