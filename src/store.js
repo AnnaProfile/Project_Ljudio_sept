@@ -8,40 +8,43 @@ const store = createStore({
        // resultList: [],
       
         playList: [],
-        musicObject:{}
+        musicObject:{},
+        artistId:"",
+        artistObject:{}
       
    },
  
 
    mutations:{
 
-       // addPlayList(state, data){
-     //       state.playList.push(data)
-       // },
+     
         setMusicObject(state, payload) {
            state.musicObject = payload;
            state.playList.push(payload);
          },
-     /*   updateSearchText(state, data) {
-            state.searchText = data;
-            this.fetchResultList;
-          }, */
-        
+
+         setArtistId(state, payload){
+           state.artistId = payload;
+         },
+         setArtistObject(state, payload){
+          state.artistObject = payload;
+        }
+
+    
    },
 
    actions:{
-
-   /* async fetchResultList() {
-        console.log('Search text is: '+this.state.searchText)
-        const url ='https://yt-music-api.herokuapp.com/api/yt/songs/' + this.state.searchText
+    /*async fetchArtistObject(context) {
+      const url ='https://yt-music-api.herokuapp.com/api/yt/artist/' + this.artistId
         
-        await axios.get(url)
-        .then(response => {
-         this.commit("resultList", response.data) 
-        })
+      await axios.get(url)
+      .then((response) => {
+       this.artistObject = response.data 
+      })
+      
+      },*/
 
-      },
-*/
+  
    },
    
 
@@ -52,10 +55,14 @@ getters: {
       getMusicObject(state) {
         return state.musicObject;
       },
+      getArtistId(state) {
+        return state.artistId;
+      },
+      getArtistObject(state){
+        return state.artistObject;
+      }
 
-   /* getResultList() {
-      return this.resultList;
-    },*/
+   
 }
 })
 

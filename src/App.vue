@@ -3,36 +3,61 @@
 <template>
 
   <div>
-     <div>
-     <img class="logo" alt="logo" src="./assets/logoLjudio.jpg" />
-    </div>
-    <div>
+     <header>
+       
+        <img class="logo" alt="logo" src="./assets/logoLjudio.jpg" />
+    
       <nav>
-        <router-link to="/">Home</router-link> |
-        <router-link to="/music">Music</router-link> |
+        <router-link to="/">Music</router-link> |
         <router-link to="/player">Player</router-link> |
       </nav>
-        <router-view/>
+    
+      </header>
     </div>
+    <div>
+      <router-view/>
+   </div>
+ <div>
+  <FooterComponent/>
   </div>
+    
 </template>
 
 <script>
+import FooterComponent from "./components/FooterComponent.vue";
+
   export default {
+    components:{
+    FooterComponent 
+  },
+    
     
   }
 </script>  
 
 <style>
 #app {
-
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
   text-align: center;
-  color: #2c3e50;
-  margin-top: 30px;
-  background-color: rgb(170, 196, 196);
+  color: #dde4eb;
+  margin-top: 5px;
+  background-color: rgb(113, 153, 153);
+  
+}
+template{
+    display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+header { 
+  background-color: rgb(54, 51, 51);
+ margin-top: 0%;
+
   
 }
 .logo{

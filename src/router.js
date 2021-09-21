@@ -1,16 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '/src/components/Home.vue'
+
 import Music from '/src/components/Music.vue'
 import Player from '/src/components/Player.vue'
+import ArtistDetail from '/src/components/ArtistDetail.vue'
 
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: Home,
-    },
-    {
-        path: '/music',
         name: 'Music',
         component: Music,
     },
@@ -19,6 +15,11 @@ const routes = [
         name: 'Player',
         component: Player,
     },
+    {
+        path: "/music/:id",
+        name: "Artist Detail",
+        component: ArtistDetail,
+      },
 ]
 const router = createRouter({
     history: createWebHistory(),
