@@ -1,7 +1,7 @@
 <template>
 
   <div>
-
+    <div class="top">
     <input
     v-model="search"
     class="search-bar"
@@ -10,11 +10,11 @@
     <button @click="myResultList(), myResultArtistList()">search</button>
   </div>
    
-   <div>
+   <div class="thePlayer">
      <Player/>
    </div>
-   
-     <br>
+   </div>
+     
   <div class="results">
     
     <div class="list-recent-music" >
@@ -116,9 +116,14 @@ mounted(){
 
 }
 </script>
+
+
 <style scoped>
 
-
+.thePlayer{
+  margin-top: 5vh;
+  
+}
 
 template {
   background-color: rgb(113, 153, 153);;

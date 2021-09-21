@@ -37,7 +37,8 @@ export default {
 
   methods: {
     playMusic() {
-         this.$store.commit("setMusicObject", this.music);   
+        this.$store.commit("setMusicObject", this.music);  
+        this.$store.commit("setIdPlayList", this.music.videoId);   
     },
   },
   mounted() {},

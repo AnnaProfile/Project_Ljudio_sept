@@ -71,6 +71,7 @@ nav{
 
 .theBody{
   margin-top: 15vh;
+  flex-grow: 1;
 }
 .logo{
   height: 10vh;
