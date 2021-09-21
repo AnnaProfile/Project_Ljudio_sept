@@ -10,6 +10,7 @@ const store = createStore({
         musicObject:{},
         artistId:"",
         artistObject:{}
+        
       
    },
  
@@ -57,7 +58,11 @@ getters: {
       },
       getArtistObject(state){
         return state.artistObject;
+      },
+      getPlayList(state){
+        return state.playList;
       }  
+
 }
 })
 

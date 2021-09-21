@@ -16,15 +16,26 @@
    
      <br>
   <div class="results">
-    <div class="list-music" >
-      <h2>Songs</h2>
-    <MusicCard  v-for="(music, i) in resultList.content" :key="music.videoId+i" :music="music"/>
+    
+    <div class="list-recent-music" >
+      <h2>Recently played</h2>
+        <li v-for="song in playedSongsList" :key="song.browseId">
+           {{ song.name }}
+          {{song.artist.name}} 
+        </li>   
     </div>
 
     <div class="artists" >
       <h2>Artists</h2>
     <ArtistCard  v-for="(artist, i) in resultArtistList.content" :key="artist.browseId+i" :artist="artist"/>
     </div>
+
+    <div class="list-music" >
+      <h2>Songs</h2>
+    <MusicCard  v-for="(music, i) in resultList.content" :key="music.videoId+i" :music="music"/>
+    </div>
+
+    
   </div>
     
  
@@ -47,6 +58,7 @@ export default{
 
   data() {
         return{
+          playedSongs:[],
           resultList:[],
           resultArtistList:[],
           searchText: ""
@@ -55,7 +67,12 @@ export default{
     },
      computed: {
 
-
+  
+       playedSongsList() {
+        return this.$store.getters.getPlayList;
+       
+     },
+  
        search: { 
          set(value){ this.searchText=value } ,
          get(){return this.searchText}
@@ -88,7 +105,7 @@ export default{
         
       },
  
-     
+  
       
 
 mounted(){
