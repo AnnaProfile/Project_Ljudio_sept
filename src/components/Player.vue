@@ -2,19 +2,18 @@
   <div>
     <h2> {{currentMusicObject.name}}</h2>
     
-
-    
     <i class="fas fa-fast-backward"></i>
-    
     <i class="far fa-play-circle" @click="play(currentMusicObject.videoId)"></i>
     <i class="fas fa-pause-circle" @click="pause()"></i>
-    
     <i class="fas fa-fast-forward" @click ="next()"></i>
-    <button @click="myPlayList()">load my playlist</button>
+    
   <!--
     <h2>{{currentPlayList}}</h2>-->
     
     
+  </div>
+  <div>
+  <button @click="myPlayList()">load my playlist</button>
   </div>
 </template>
 
@@ -71,9 +70,12 @@ export default {
   
 }
 </script>
-<style>
+<style scoped>
 i {
   width: 10vh;
   
+}
+button{
+  margin-top: 3vh;
 }
   </style>
