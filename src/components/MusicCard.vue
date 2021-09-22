@@ -56,22 +56,26 @@ export default {
 .music-card{
   
   display: grid;
-  grid-template-rows: 20% 40% 40%;   
+  grid-template-rows: min-content auto;  
   width: 18vh;
   height: 30vh;
   max-height: 30vh;
   margin-top: 2vh;
   margin-left: 10%;
   margin-right: 10%;
-  
-  
+  overflow: hidden;
   border: 1px solid rgb(230, 230, 230);
   background-color: rgb(95, 75, 75);
   font-size: 8vh+2px;
 }
 
 img{
-  
+   display: flex;
+   position: relative;
+   
+   border-top-left-radius: inherit;
+   border-top-right-radius: inherit;
+   width: 100%;
 
 }
 
