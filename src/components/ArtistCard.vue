@@ -8,8 +8,8 @@
 </div>
 <div class="artist-info">
      <div>
-       {{artist.name}}
-       
+       <!--{{artist.name}}-->
+       {{artist.browseId}}
       </div>  
      
 </div>
@@ -34,7 +34,9 @@ export default {
     
     redirectArtistView() {
      
-    //this.$store.commit("setArtistId", this.artist.browseId);
+    this.$store.commit("setArtistId", this.artist.browseId);
+    this.$store.commit("setArtistURL", this.artist.browseId);
+   
     //this.$store.commit("setArtistObject", this.artist.browseId);
     const routerUrl = "/music/" + this.artist.browseId;
     this.$router.push({ path: routerUrl });

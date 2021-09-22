@@ -17,6 +17,7 @@
 
 
 
+
 </div>
 </template>
 
@@ -36,11 +37,15 @@ export default {
   props: ["music"],
 
   methods: {
+
     playMusic() {
         this.$store.commit("setMusicObject", this.music);  
         this.$store.commit("setIdPlayList", this.music.videoId);
+        this.$store.commit("setURL", this.music.videoId)
         
-    },
+            },
+
+    
   },
   mounted() {},
   computed: {},
@@ -49,11 +54,16 @@ export default {
 
 <style scoped>
 .music-card{
-     
+  
+  display: grid;
+  grid-template-rows: 20% 40% 40%;   
   width: 18vh;
-  height: 20vh;
-  max-height: 20vh;
+  height: 30vh;
+  max-height: 30vh;
   margin-top: 2vh;
+  margin-left: 10%;
+  margin-right: 10%;
+  
   
   border: 1px solid rgb(230, 230, 230);
   background-color: rgb(95, 75, 75);
@@ -62,9 +72,7 @@ export default {
 
 img{
   
-  width: 10vh;
-  height: 10vh;
- 
+
 }
 
 

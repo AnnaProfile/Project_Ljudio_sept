@@ -1,8 +1,16 @@
 <template>
+
 <body>
     <h1>The artist</h1>
-    
-  <h2>{{myArtistObject.name}} </h2>
+    <i @click="shareThisArtist()" class="fas fa-share-square"></i>
+    <h1>{{myArtistObject.name}} </h1>
+  <div class="ArtistDesc">
+    {{myArtistObject.description}}
+  </div>
+  <!--<div>
+    {{playListArtist}}
+  </div>
+ -->
   
 </body>
 </template>
@@ -18,19 +26,15 @@ export default{
  data(){
     return{
         artistId:"",
-        myArtistObject:{}
+        myArtistObject:{},
+        playListArtist:[]
 
     }
     
   },
      computed: {
-    /* theArtistId() {
-      return this.$store.getters.getArtistId;
-    },
-        myArtistObject() {
-          return this.$store.getters.getArtistObject();   
-        }
-*/
+    
+
       
      },
 
@@ -45,6 +49,22 @@ export default{
         })
         
         },
+        shareThisArtist(){
+    const routerUrl = "/share/";
+    this.$router.push({ path: routerUrl });
+
+            }
+        
+    
+/*
+       async artistPlaylist() {
+        const url ='https://yt-music-api.herokuapp.com/api/yt/playlist/' + this.artistId
+        
+        await axios.get(url)
+        .then((response) => {
+         this.playListArtist = response.data 
+        })
+       }*/
 
              
       },
@@ -56,19 +76,24 @@ mounted(){
     
     this.artistId = this.$route.params.id;
     this.myArtistDetails();
+    //this.artistPlaylist();
     
-    //this.$store.dispatch("fetchArtistObject", this.artistId);
-    
-   
-    
+       
   },
       
-    
-           
+      
 
 }
 </script>
+
+
 <style scoped>
+.body {
+  display: flex;
+   flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
 .description {
     font-size: 8px;
 
