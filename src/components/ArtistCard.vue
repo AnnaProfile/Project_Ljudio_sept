@@ -8,8 +8,8 @@
 </div>
 <div class="artist-info">
      <div>
-       <!--{{artist.name}}-->
-       {{artist.browseId}}
+       {{artist.name}}
+       
       </div>  
      
 </div>
@@ -47,22 +47,32 @@ export default {
 </script>
 
 <style scoped>
-/*.music-card{
-    width: 10vh;
-    height: 20vh;
-    border-style: solid;
-    background-color: gray;
-}
-.music-info{
-  display: flex;
-  flex-direction: column;
-  font-size: 2vh;
-  width: 100%;
-}*/
-img{
+.artist-card{
+  padding: 0;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: auto;
   
-  width: 10vh;
-  height: 10vh;
+  width: 14vh;
+  height: 20vh;
+  max-height: 20vh;
+  margin-top: 2vh;
+  
+  border: 1px solid rgb(230, 230, 230);
+  background-color: rgb(95, 75, 75);
+  }
+.artist-info{
+justify-content: center;   
+font-size: 1vh+1px;
+margin-top: 2vh;
+   
+}
+img{
+  border-radius: 15px;
+  
+  align-items: center;
+  margin-top: 1vh;
+  
  
 }
 

@@ -1,42 +1,54 @@
 <template>
-
-  <div>
+  <main>
+  
     <div class="top">
-    <input
-    v-model="search"
-    class="search-bar"
-    type="text"
-    placeholder="find a song"/>
-    <button @click="myResultList(), myResultArtistList()">search</button>
-  </div>
+      <div>
+      <input
+        v-model="search"
+        class="search-bar"
+        type="text"
+        placeholder="find a song"/>
+        <button @click="myResultList(), myResultArtistList()">search</button>
+      </div>
    
-   <div class="thePlayer">
-     <Player/>
-   </div>
+      <div class="thePlayer">
+        <Player/>
+      </div>
+
    </div>
      
-  <div class="results">
-    
-    <div class="list-recent-music" >
-      <h2>Recently played</h2>
+ 
+  
+    <div class="playList" >
+      <div>
+        <h2>My Playlist</h2>
+      </div>
         <li v-for="song in playedSongsList" :key="song.browseId">
-           {{ song.name }}
-          {{song.artist.name}} 
+           
+          {{song.artist.name}} {{ song.name }}
         </li>   
-    </div>
+    </div> 
 
-    <div class="artists" >
-      <h2>Artists</h2>
-    <ArtistCard  v-for="(artist, i) in resultArtistList.content" :key="artist.browseId+i" :artist="artist"/>
-    </div>
+  
 
-    <div class="list-music" >
-      <h2>Songs</h2>
+   
+    <div class="musicList"  >
+     <h2>Songs</h2>
+     <div class="theList">
     <MusicCard  v-for="(music, i) in resultList.content" :key="music.videoId+i" :music="music"/>
     </div>
+    </div>
+    
+    
+    <div class="artists" >
+      <h2>Artists</h2>
+      <div class="theList">
+    <ArtistCard  v-for="(artist, i) in resultArtistList.content" :key="artist.browseId+i" :artist="artist"/>
+    </div>
+    </div>
 
     
-  </div>
+  </main>
     
  
   
@@ -104,6 +116,8 @@ export default{
         }
         
       },
+
+      
  
   
       
@@ -120,23 +134,63 @@ mounted(){
 
 <style scoped>
 
-.thePlayer{
-  margin-top: 5vh;
+main{ 
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-left: 10%;
+  margin-right: 10%;
   
 }
 
-template {
-  background-color: rgb(113, 153, 153);;
+
+.thePlayer{
+  margin-top: 4px;
+  
 }
-.list-music {
-  margin-bottom: 20px;
+
+.musicList{
+  justify-content: center;
+}
+.artistList{
+  justify-content: center;
+}
+.playList
+{
+  justify-content: center;
+  
+
+}
+/*
+.musicList{
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      grid-gap: 2vh;
+      width: 100%;
+      padding: 2vh;
+      justify-content: center;
+}*/
+.theList{
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      grid-gap: 2vh;
+      width: 100%;
+      padding: 2vh;
+      justify-content: center;
 }
 
 
  .search-bar{
    width: 30vh;
    border-width: 5px;
-   margin-right: 10px;
+   margin-right: 2vh;
+   margin-top: 2vh;
+   margin-bottom: 2vh;
+ }
+ .top{
+   display: grid;
+   grid-template-rows: 50% 50%;
  }
 
 
@@ -152,24 +206,7 @@ rgba(252,236,252,1) 0%,
 rgba(251,166,225,1) 50%,
 rgba(253,137,215,1) 55%,
 rgba(255,124,216,1) 100%);
-/* Internet Explorer */
-background: -ms-linear-gradient(top,
-rgba(252,236,252,1) 0%,
-rgba(251,166,225,1) 50%,
-rgba(253,137,215,1) 55%,
-rgba(255,124,216,1) 100%);
-/* Mozilla Firefox */
-background: -moz-linear-gradient(top,
-rgba(252,236,252,1) 0%,
-rgba(251,166,225,1) 50%,
-rgba(253,137,215,1) 55%,
-rgba(255,124,216,1) 100%);
-/* W3C standard specification */
-background: linear-gradient(top,
-rgba(252,236,252,1) 0%,
-rgba(251,166,225,1) 50%,
-rgba(253,137,215,1) 55%,
-rgba(255,124,216,1) 100%);
+
 
 box-shadow:
 inset 0 0 0 1px rgba(255, 255, 255, 0.3),
@@ -177,26 +214,8 @@ inset 0 0 0 1px rgba(255, 255, 255, 0.3),
 }
 button:hover {
 cursor: pointer;
-/* Safari, iOS, Android */
+
 background: -webkit-linear-gradient(top,
-rgba(255,255,255,1) 0%,
-rgba(254,231,247,1) 50%,
-rgba(254,195,234,1) 51%,
-rgba(255,184,234,1) 100%);
-/* Internet Explorer */
-background: -ms-linear-gradient(top,
-rgba(255,255,255,1) 0%,
-rgba(254,231,247,1) 50%,
-rgba(254,195,234,1) 51%,
-rgba(255,184,234,1) 100%);
-/* Mozilla Firefox */
-background: -moz-linear-gradient(top,
-rgba(255,255,255,1) 0%,
-rgba(254,231,247,1) 50%,
-rgba(254,195,234,1) 51%,
-rgba(255,184,234,1) 100%);
-/* W3C standard specification */
-background: linear-gradient(top,
 rgba(255,255,255,1) 0%,
 rgba(254,231,247,1) 50%,
 rgba(254,195,234,1) 51%,
@@ -209,6 +228,12 @@ color: rgba(255,255,255,1);
 position: relative;
 left: 1px;
 top: 1px;
+}
+
+.thePlayer{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+
 }
  
 </style>

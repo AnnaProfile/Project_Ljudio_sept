@@ -3,7 +3,7 @@
     <h1>The artist</h1>
     
   <h2>{{myArtistObject.name}} </h2>
-  <div class="description">{{myArtistObject.description}}</div> 
+  
 </body>
 </template>
 

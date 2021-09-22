@@ -1,6 +1,6 @@
 
 <template>
-
+      <div>
        <header>
        
         <img class="logo" alt="logo" src="./assets/logoLjudio.jpg" />
@@ -11,11 +11,12 @@
       </nav>
     
       </header>
+      </div>
     
     <div class="theBody">
       <router-view/>
-   </div>
- <div class="footer">
+    </div>
+  <div class="footer">
   <FooterComponent/>
   </div>
     
@@ -34,18 +35,22 @@ import FooterComponent from "./components/FooterComponent.vue";
 </script>  
 
 <style>
+*{
+  margin:0;
+  box-sizing: border-box;
+}
 #app {
+
+  min-height: 100vh;
   display: flex;
-  height: 100%;
-  justify-content: center;
-  flex-direction: column;
+  
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;*/
   
   text-align: center;
   color: #dde4eb;
-  margin-top: 5px;
+  margin-top: 0%;
   background-color: rgb(113, 153, 153);
   
 }
@@ -65,13 +70,14 @@ height: 15vh;
 }
 nav{
   margin-top: 3vh;
-  margin-right: 4vh;
+  margin-right: 10vh;
   
 }
 
 .theBody{
   margin-top: 15vh;
   flex-grow: 1;
+  
 }
 .logo{
   height: 10vh;
@@ -84,6 +90,7 @@ position: fixed;
 left: 0;
 bottom: 0;
 width: 100%;
+height: 10vh;
 background-color: gray;
 text-align: center;
 }

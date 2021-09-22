@@ -6,12 +6,12 @@ const store = createStore({
    state:{
         counter:0,
         searchText:"",
-       // resultList: [],
         playList: [],
         playIdList: [],
         musicObject:{},
         artistId:"",
-        artistObject:{}
+        artistObject:{},
+        nextObject:{}
 
       
    },
@@ -25,8 +25,10 @@ const store = createStore({
     },
         setMusicObject(state, payload) {
            state.musicObject = payload;
-           state.playList.push(payload);
+           state.playList.unshift(payload);
+         
          },
+               
 
          setArtistId(state, payload){
            state.artistId = payload;
@@ -71,7 +73,8 @@ getters: {
         return state.playIdList;
       },
       getNextMusicObject(state){
-        return state.playList[state.counter];
+       // state.playList.push(state.nextObject);
+        return state.playList.slice(0,1);
        
       }
 

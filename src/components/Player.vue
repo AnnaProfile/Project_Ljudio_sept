@@ -1,15 +1,18 @@
 <template>
   <div>
-    <h2>Press Play to hear: {{currentMusicObject.name}}</h2>
-    <!--<h3>{{idList}}</h3>-->
+    <h2> {{currentMusicObject.name}}</h2>
+    
+
     
     <i class="fas fa-fast-backward"></i>
     
     <i class="far fa-play-circle" @click="play(currentMusicObject.videoId)"></i>
     <i class="fas fa-pause-circle" @click="pause()"></i>
     
-    <i class="fas fa-fast-forward"></i>
-    <!--<button @click="myPlayList()">Next</button>-->
+    <i class="fas fa-fast-forward" @click ="next()"></i>
+    <button @click="myPlayList()">load my playlist</button>
+  <!--
+    <h2>{{currentPlayList}}</h2>-->
     
     
   </div>
@@ -18,7 +21,8 @@
 <script>
 export default {
   data(){
-  //  videoIdList:{}
+   
+  
   },
 
   props: ["song"],
@@ -34,14 +38,13 @@ export default {
       window.player.pauseVideo()
     },
      next(){
-      this.play(idList[2])
-     // window.player.nextVideo()
+     window.player.nextVideo()
     },
     previous(){
       window.player.previousVideo()
     },
     myPlayList(){
-      player.loadPlaylist(idList)
+      player.loadPlaylist(this.idList)
     }
   },
   computed:{
@@ -53,6 +56,24 @@ export default {
         return this.$store.getters.getIdList;
        
      },
-  }
+     nextToPlay() {
+        return this.$store.getters.getNextMusicObject;
+               
+     },
+     currentPlayList() {
+       this.playList = this.$store.getters.getPlayList;
+               
+     },
+  },
+  mounted() {
+    this.currentPlayList
+  },
+  
 }
 </script>
+<style>
+i {
+  width: 10vh;
+  
+}
+  </style>
