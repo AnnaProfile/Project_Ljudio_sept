@@ -11,7 +11,8 @@ const store = createStore({
         musicObject:{},
         artistId:"",
         artistObject:{},
-        nextObject:{}
+        nextObject:{},
+        musicVideoLink: "https://www.youtube.com/watch?v=pAzEY1MfXrQ"
 
       
    },
@@ -26,9 +27,11 @@ const store = createStore({
         setMusicObject(state, payload) {
            state.musicObject = payload;
            state.playList.unshift(payload);
-         
+           
          },
-               
+         setURL(state, payload){
+           state.musicVideoLink = "//https://www.youtube.com/watch?v=" + payload
+         },           
 
          setArtistId(state, payload){
            state.artistId = payload;
@@ -76,7 +79,11 @@ getters: {
        // state.playList.push(state.nextObject);
         return state.playList.slice(0,1);
        
+      },
+      getMusicLink(state){
+        return state.musicVideoLink;
       }
+
 
 }
 })

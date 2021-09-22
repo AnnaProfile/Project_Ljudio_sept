@@ -46,7 +46,12 @@ export default {
     },
     myPlayList(){
       player.loadPlaylist(this.idList)
-    }
+    },
+    shareThisSong(){
+    const routerUrl = "/share/";
+    this.$router.push({ path: routerUrl });
+
+            }
   },
   computed:{
     currentMusicObject() {

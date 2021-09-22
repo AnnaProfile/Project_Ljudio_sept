@@ -41,14 +41,11 @@ export default {
     playMusic() {
         this.$store.commit("setMusicObject", this.music);  
         this.$store.commit("setIdPlayList", this.music.videoId);
-        this.Player.play();
+        this.$store.commit("setURL", this.music.videoId)
+        
             },
 
-    shareThisSong(){
-    const routerUrl = "/share/";
-    this.$router.push({ path: routerUrl });
-
-            }
+    
   },
   mounted() {},
   computed: {},
