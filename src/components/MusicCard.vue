@@ -56,7 +56,7 @@ export default {
 .music-card{
   
   display: grid;
-  grid-template-rows: min-content auto;  
+  grid-template-rows: auto;  
   width: 18vh;
   height: 30vh;
   max-height: 30vh;
@@ -66,7 +66,7 @@ export default {
   overflow: hidden;
   border: 1px solid rgb(230, 230, 230);
   background-color: rgb(95, 75, 75);
-  font-size: 8vh+2px;
+ 
 }
 
 img{

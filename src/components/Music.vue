@@ -136,7 +136,7 @@ mounted(){
 main{ 
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: 14em auto;
   column-gap: 2vh;
   margin-left: 10%;
   margin-right: 10%;
@@ -193,7 +193,8 @@ main{
  }
  .top{
    display: grid;
-   grid-template-rows: 50% 50%;
+  grid-template-columns: auto;
+  grid-template-rows: 6em auto;
  }
 
 
@@ -234,8 +235,8 @@ top: 1px;
 }
 
 .thePlayer{
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  margin-top: 0vh;
+  margin-bottom: 0vh;
 
 }
  
