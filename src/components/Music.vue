@@ -1,31 +1,54 @@
 <template>
-
-  <div>
-
-    <input
-    v-model="search"
-    class="search-bar"
-    type="text"
-    placeholder="find a song"/>
-    <button @click="myResultList(), myResultArtistList()">search</button>
-  </div>
+  <main>
+  
+    <div class="top">
+      <div>
+      <input
+        v-model="search"
+        class="search-bar"
+        type="text"
+        placeholder="find a song"/>
+        <button @click="myResultList(), myResultArtistList()">search</button>
+      </div>
    
-   <div>
-     <Player/>
+      <div class="thePlayer">
+        <Player/>
+      </div>
+
    </div>
+     
+ 
+  
+    <div class="playList" >
+      <div>
+        <h2>My Playlist</h2>
+      </div>
+        <li v-for="song in playedSongsList" :key="song.browseId">
+           
+          {{song.artist.name}} {{ song.name }}
+        </li>   
+    </div> 
+
+  
+
    
-     <br>
-  <div class="results">
-    <div class="list-music" >
-      <h2>Songs</h2>
+    <div class="musicList"  >
+     <h2>Songs</h2>
+     <div class="theList">
     <MusicCard  v-for="(music, i) in resultList.content" :key="music.videoId+i" :music="music"/>
     </div>
-
+    </div>
+    
+    
     <div class="artists" >
       <h2>Artists</h2>
+      <div class="theList">
     <ArtistCard  v-for="(artist, i) in resultArtistList.content" :key="artist.browseId+i" :artist="artist"/>
     </div>
-  </div>
+    </div>
+
+    
+  </main>
     
  
   
@@ -47,6 +70,7 @@ export default{
 
   data() {
         return{
+          playedSongs:[],
           resultList:[],
           resultArtistList:[],
           searchText: ""
@@ -55,7 +79,12 @@ export default{
     },
      computed: {
 
-
+  
+       playedSongsList() {
+        return this.$store.getters.getPlayList;
+       
+     },
+  
        search: { 
          set(value){ this.searchText=value } ,
          get(){return this.searchText}
@@ -87,8 +116,10 @@ export default{
         }
         
       },
+
+      
  
-     
+  
       
 
 mounted(){
@@ -99,14 +130,110 @@ mounted(){
 
 }
 </script>
+
+
 <style scoped>
 
-.results{
-  align-items: center;
+main{ 
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  
+}
+
+
+.thePlayer{
+  margin-top: 4px;
+  
+}
+
+.musicList{
+  justify-content: center;
+}
+.artistList{
+  justify-content: center;
+}
+.playList
+{
+  justify-content: center;
+  
+
+}
+/*
+.musicList{
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      grid-gap: 2vh;
+      width: 100%;
+      padding: 2vh;
+      justify-content: center;
+}*/
+.theList{
+      display: flex;
+      flex-direction: row;
+      flex-wrap:wrap;
+      grid-gap: 2vh;
+      width: 100%;
+      padding: 2vh;
+      justify-content: center;
 }
 
 
  .search-bar{
    width: 30vh;
+   border-width: 5px;
+   margin-right: 2vh;
+   margin-top: 2vh;
+   margin-bottom: 2vh;
  }
+ .top{
+   display: grid;
+   grid-template-rows: 50% 50%;
+ }
+
+
+ button{
+   
+color: rgba(66,48,1,1);
+border-radius: 5px;
+border: 1px solid rgba(251,185,232,1);
+background: rgba(251,168,225,1); /* Bakgrundsfärg om övertoningen inte visas */
+/* Safari, iOS, Android */
+background: -webkit-linear-gradient(top,
+rgba(252,236,252,1) 0%,
+rgba(251,166,225,1) 50%,
+rgba(253,137,215,1) 55%,
+rgba(255,124,216,1) 100%);
+
+
+box-shadow:
+inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+0 2px 3px rgba(0,0,0,0.70);
+}
+button:hover {
+cursor: pointer;
+
+background: -webkit-linear-gradient(top,
+rgba(255,255,255,1) 0%,
+rgba(254,231,247,1) 50%,
+rgba(254,195,234,1) 51%,
+rgba(255,184,234,1) 100%);
+}
+/* Muspekare intryckt */
+button:active {
+color: rgba(255,255,255,1);
+/* Flyttar knappen när den trycks in */
+position: relative;
+left: 1px;
+top: 1px;
+}
+
+.thePlayer{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+
+}
+ 
 </style>

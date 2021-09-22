@@ -4,24 +4,31 @@ import axios from "axios";
 const store = createStore({
 
    state:{
+        counter:0,
         searchText:"",
-       // resultList: [],
-      
         playList: [],
+        playIdList: [],
         musicObject:{},
         artistId:"",
-        artistObject:{}
+        artistObject:{},
+        nextObject:{}
+
       
    },
  
 
    mutations:{
 
+      setIdPlayList(state, payload) {
      
+      state.playIdList.push(payload);
+    },
         setMusicObject(state, payload) {
            state.musicObject = payload;
-           state.playList.push(payload);
+           state.playList.unshift(payload);
+         
          },
+               
 
          setArtistId(state, payload){
            state.artistId = payload;
@@ -34,7 +41,7 @@ const store = createStore({
    },
 
    actions:{
-    /*async fetchArtistObject(context) {
+    async fetchArtistObject(context) {
       const url ='https://yt-music-api.herokuapp.com/api/yt/artist/' + this.artistId
         
       await axios.get(url)
@@ -42,16 +49,14 @@ const store = createStore({
        this.artistObject = response.data 
       })
       
-      },*/
+      },
 
   
    },
    
 
 
-getters: {
-
-   
+getters: {   
       getMusicObject(state) {
         return state.musicObject;
       },
@@ -60,9 +65,19 @@ getters: {
       },
       getArtistObject(state){
         return state.artistObject;
+      },
+      getPlayList(state){
+        return state.playList;
+      },  
+      getIdList(state){
+        return state.playIdList;
+      },
+      getNextMusicObject(state){
+       // state.playList.push(state.nextObject);
+        return state.playList.slice(0,1);
+       
       }
 
-   
 }
 })
 

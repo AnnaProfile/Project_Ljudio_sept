@@ -11,7 +11,7 @@
        {{music.name}}
       </div>  
      <div>
-       {{music.artist.name}}
+      {{music.artist.name}}
      </div>  
 </div>
 
@@ -37,7 +37,9 @@ export default {
 
   methods: {
     playMusic() {
-         this.$store.commit("setMusicObject", this.music);   
+        this.$store.commit("setMusicObject", this.music);  
+        this.$store.commit("setIdPlayList", this.music.videoId);
+        
     },
   },
   mounted() {},
@@ -47,17 +49,17 @@ export default {
 
 <style scoped>
 .music-card{
-    width: 10vh;
-    height: 20vh;
-    border-style: solid;
-    background-color: gray;
+     
+  width: 18vh;
+  height: 20vh;
+  max-height: 20vh;
+  margin-top: 2vh;
+  
+  border: 1px solid rgb(230, 230, 230);
+  background-color: rgb(95, 75, 75);
+  font-size: 8vh+2px;
 }
-.music-info{
-  display: flex;
-  flex-direction: column;
-  font-size: 2vh;
-  width: 100%;
-}
+
 img{
   
   width: 10vh;

@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p>I am a footer</p>
+        <h3>Ljudio - the app of music</h3>
     </footer>
 </template>
 
@@ -12,3 +12,6 @@ export default {
     }
 }
 </script>
+<style scoped>
+
+</style>
