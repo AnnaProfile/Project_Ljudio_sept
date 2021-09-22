@@ -69,7 +69,7 @@ data() {
       return encodeURIComponent(this.text);
     },
     theLink: function() {
-      return this.$store.state.musicVideoLink
+      return this.$store.state.musicLink
     }
   },
   methods: {
