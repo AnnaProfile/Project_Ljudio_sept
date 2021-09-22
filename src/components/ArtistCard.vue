@@ -8,8 +8,8 @@
 </div>
 <div class="artist-info">
      <div>
-       <!--{{artist.name}}-->
-       {{artist.browseId}}
+       {{artist.name}}
+      
       </div>  
      
 </div>
@@ -52,14 +52,14 @@ export default {
 .artist-card{
   padding: 0;
   display: grid;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: auto;
   grid-template-columns: auto;
   
   width: 14vh;
   height: 20vh;
   max-height: 20vh;
   margin-top: 2vh;
-  
+  overflow: hidden;
   border: 1px solid rgb(230, 230, 230);
   background-color: rgb(95, 75, 75);
   }
@@ -71,7 +71,6 @@ margin-top: 2vh;
 }
 img{
   border-radius: 15px;
-  
   align-items: center;
   margin-top: 1vh;
   

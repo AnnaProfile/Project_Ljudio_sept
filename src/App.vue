@@ -43,6 +43,7 @@ import FooterComponent from "./components/FooterComponent.vue";
 
   min-height: 100vh;
   display: flex;
+  padding-right: 10vh;
   
   font-family: Avenir, Helvetica, Arial, sans-serif;
 /*  -webkit-font-smoothing: antialiased;
@@ -70,7 +71,7 @@ height: 15vh;
 }
 nav{
   margin-top: 3vh;
-  margin-right: 10vh;
+  padding-right: 10vh;
   
 }
 
