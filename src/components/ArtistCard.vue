@@ -8,8 +8,8 @@
 </div>
 <div class="artist-info">
      <div>
-       {{artist.name}}
-       
+       <!--{{artist.name}}-->
+       {{artist.browseId}}
       </div>  
      
 </div>

@@ -2,7 +2,7 @@
 <body>
     <h1>The artist</h1>
     
-  <h2>{{myArtistObject.name}} </h2>
+  <h2>{{myArtistObject}} </h2>
   
 </body>
 </template>
@@ -24,13 +24,8 @@ export default{
     
   },
      computed: {
-    /* theArtistId() {
-      return this.$store.getters.getArtistId;
-    },
-        myArtistObject() {
-          return this.$store.getters.getArtistObject();   
-        }
-*/
+    
+
       
      },
 
