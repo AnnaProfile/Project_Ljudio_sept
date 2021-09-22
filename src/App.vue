@@ -7,7 +7,7 @@
     
       <nav>
         <router-link to="/">Home</router-link> |
-        
+        <router-link to="/Share">Share</router-link> |
       </nav>
     
       </header>

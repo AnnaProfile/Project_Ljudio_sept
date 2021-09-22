@@ -17,7 +17,6 @@
 
    </div>
      
- 
   
     <div class="playList" >
       <div>
@@ -137,6 +136,8 @@ mounted(){
 main{ 
   display: grid;
   grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 2vh;
   margin-left: 10%;
   margin-right: 10%;
   
@@ -150,9 +151,11 @@ main{
 
 .musicList{
   justify-content: center;
+  margin-top: 4vh;
 }
 .artistList{
   justify-content: center;
+  margin-top: 4vh;
 }
 .playList
 {
@@ -186,7 +189,7 @@ main{
    border-width: 5px;
    margin-right: 2vh;
    margin-top: 2vh;
-   margin-bottom: 2vh;
+   margin-bottom: 1vh;
  }
  .top{
    display: grid;

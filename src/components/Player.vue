@@ -1,15 +1,17 @@
 <template>
   <div>
+    <div>
     <h2> {{currentMusicObject.name}}</h2>
-    
+  <i @click="shareThisSong()" class="fas fa-share-square"></i>
+  
+</div>
+    <div>
     <i class="fas fa-fast-backward"></i>
     <i class="far fa-play-circle" @click="play(currentMusicObject.videoId)"></i>
     <i class="fas fa-pause-circle" @click="pause()"></i>
     <i class="fas fa-fast-forward" @click ="next()"></i>
-    
-  <!--
-    <h2>{{currentPlayList}}</h2>-->
-    
+  
+    </div>
     
   </div>
   <div>
