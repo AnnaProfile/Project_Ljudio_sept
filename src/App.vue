@@ -7,7 +7,7 @@
     
       <nav>
         <router-link to="/">Home</router-link> |
-        <router-link to="/Share">Share</router-link> |
+      
       </nav>
     
       </header>
@@ -72,7 +72,7 @@ height: 15vh;
 nav{
   margin-top: 3vh;
   padding-right: 10vh;
-  
+    
 }
 
 .theBody{
