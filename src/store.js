@@ -12,7 +12,7 @@ const store = createStore({
         artistId:"",
         artistObject:{},
         nextObject:{},
-        musicLink: "https://www.youtube.com/watch?v=pAzEY1MfXrQ"
+        musicLink: ""
 
       
    },
@@ -30,7 +30,7 @@ const store = createStore({
            
          },
          setURL(state, payload){
-           state.musicLink = "//https://www.youtube.com/watch?v=" + payload
+           state.musicLink = "//http://localhost:3000/" + payload
          }, 
          setArtistURL(state, payload){
           state.musicLink = "//http://localhost:3000/music/" + payload
