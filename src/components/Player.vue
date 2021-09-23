@@ -3,7 +3,7 @@
   
     <div class="currentMusic">
       <h2> {{currentMusicObject.name}}</h2>
-      <i @click="shareThisSong()" class="fas fa-share-square"></i>
+       <a :href="`mailto:?subject=&body=http://localhost:3000/${currentMusicObject.videoId}`"><i class="fas fa-share"></i></a>
     </div>
 
     <div>
@@ -28,6 +28,12 @@ export default {
   components: {
     Email
   },
+  data() {
+        return{
+                  
+        }
+
+    },
 
   props: ["song"],
 
@@ -36,6 +42,7 @@ export default {
       // calling global variable
       window.player.loadVideoById(id)
       window.player.playVideo()
+     
      
     },
     pause(){
@@ -50,20 +57,13 @@ export default {
     myPlayList(){
       player.loadPlaylist(this.idList)
     },
-    shareThisSong(){
-       const routerUrl = "/share/";
-        this.$store.commit(routerUrl);
-        this.$router.push({ path: routerUrl });
-    
-
-            }
+  
   },
   computed:{
     currentMusicObject() {
       return this.$store.getters.getMusicObject;
     },
-
-      idList() {
+       idList() {
         return this.$store.getters.getIdList;
        
      },
@@ -78,6 +78,7 @@ export default {
   },
   mounted() {
     this.currentPlayList
+    this.currentLink
   },
   
 }
