@@ -21,9 +21,14 @@
         <button class="btn btn-primary" type="submit">Generate</button>
       </div>
     </form>
-
-    <h3>Copy this link </h3><h3>{{theLink}}</h3>
-
+    <div class="messege">
+    <div>
+    <h3>Copy this link and share with your friends </h3>
+    </div>
+    <div>
+    <h3>{{theLink}}</h3>
+    </div>
+  </div>
     
     <template v-if="success">
     <h2>Output</h2>
@@ -107,5 +112,11 @@ data() {
 }
 h3{
   font-size: 20px;
+}
+.message{
+  display: flex;
+  flex-direction: column;
+  
+
 }
 </style>

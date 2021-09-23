@@ -58,12 +58,13 @@ import axios from "axios";
 import MusicCard from "./MusicCard.vue";
 import Player from "./Player.vue";
 import ArtistCard from "./ArtistCard.vue"
+import { Email } from 'vue-socialmedia-share';
 
 
 export default{
   name:"Music", 
   components:{
-    MusicCard, Player, ArtistCard 
+    MusicCard, Player, ArtistCard, Email 
   },
   
 

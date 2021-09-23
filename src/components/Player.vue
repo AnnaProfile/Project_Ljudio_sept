@@ -18,10 +18,15 @@
 </template>
 
 <script>
+
+import { Email } from 'vue-socialmedia-share';
+
+// usage in local component
+
 export default {
-  data(){
-   
-  
+
+  components: {
+    Email
   },
 
   props: ["song"],
@@ -46,8 +51,10 @@ export default {
       player.loadPlaylist(this.idList)
     },
     shareThisSong(){
-    const routerUrl = "/share/";
-    this.$router.push({ path: routerUrl });
+       const routerUrl = "/share/";
+        this.$store.commit(routerUrl);
+        this.$router.push({ path: routerUrl });
+    
 
             }
   },

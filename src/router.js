@@ -1,15 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Music from '/src/components/Music.vue'
+import MusicCard from '/src/components/MusicCard.vue'
 import Player from '/src/components/Player.vue'
 import ArtistDetail from '/src/components/ArtistDetail.vue'
 import ShareComponent from '/src/components/ShareComponent.vue'
+import EmailComponent from '/src/components/EmailComponent.vue'
 
 const routes = [
     {
-        path: '/',
+        path: '/:id?',
         name: 'Music',
-        component: Music,
+        component: Music, MusicCard
     },
     {
         path: '/player',
@@ -25,6 +27,11 @@ const routes = [
         path: "/share",
         name: "Share",
         component: ShareComponent,
+      },
+      {
+        path: "/Email/:id",
+        name: "Email",
+        component: EmailComponent,
       },
 ]
 const router = createRouter({

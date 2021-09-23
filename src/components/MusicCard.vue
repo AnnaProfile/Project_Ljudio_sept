@@ -41,7 +41,11 @@ export default {
     playMusic() {
         this.$store.commit("setMusicObject", this.music);  
         this.$store.commit("setIdPlayList", this.music.videoId);
-        this.$store.commit("setURL", this.music.videoId)
+        this.$store.commit("setURL", this.music.videoId);
+        
+        const routerUrl = "/" + this.music.videoId;
+        this.$store.commit(routerUrl);
+        this.$router.push({ path: routerUrl });
         
             },
 
