@@ -2,7 +2,8 @@
 
 <body>
     <h1>The artist</h1>
-    <i @click="shareThisArtist()" class="fas fa-share-square"></i>
+    <!--<i @click="shareThisArtist()" class="fas fa-share-square"></i>-->
+    <a :href="`mailto:?subject=&body='https://localhost:3000/music/${this.artistId}`"><i class="fas fa-share"></i></a>
     <h1>{{myArtistObject.name}} </h1>
   <div class="ArtistDesc">
     {{myArtistObject.description}}

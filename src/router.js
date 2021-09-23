@@ -4,7 +4,7 @@ import Music from '/src/components/Music.vue'
 import MusicCard from '/src/components/MusicCard.vue'
 import Player from '/src/components/Player.vue'
 import ArtistDetail from '/src/components/ArtistDetail.vue'
-import ShareComponent from '/src/components/ShareComponent.vue'
+
 
 
 const routes = [
@@ -23,11 +23,7 @@ const routes = [
         name: "Artist Detail",
         component: ArtistDetail,
       },
-      {
-        path: "/share",
-        name: "Share",
-        component: ShareComponent,
-      },
+     
      
 ]
 const router = createRouter({
