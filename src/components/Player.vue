@@ -1,23 +1,19 @@
 <template>
 <div class="playerClass">
-  <div>
-    <div>
-    <h2> {{currentMusicObject.name}}</h2>
-  <i @click="shareThisSong()" class="fas fa-share-square"></i>
   
+    <div class="currentMusic">
+      <h2> {{currentMusicObject.name}}</h2>
+      <i @click="shareThisSong()" class="fas fa-share-square"></i>
     </div>
+
     <div>
-    <i class="fas fa-fast-backward" @click ="previous()"></i>
-    <i class="far fa-play-circle" @click="play(currentMusicObject.videoId)"></i>
-    <i class="fas fa-pause-circle" @click="pause()"></i>
-    <i class="fas fa-fast-forward" @click ="next()"></i>
-  
+      <i class="fas fa-fast-backward" @click ="previous()"></i>
+      <i class="far fa-play-circle" @click="play(currentMusicObject.videoId)"></i>
+      <i class="fas fa-pause-circle" @click="pause()"></i>
+      <i class="fas fa-fast-forward" @click ="next()"></i>
+      <button @click="myPlayList()">load my playlist</button>
     </div>
     
-  </div>
-  <div>
-  <button @click="myPlayList()">load my playlist</button>
-  </div>
   </div>
 </template>
 
@@ -82,24 +78,44 @@ export default {
 <style scoped>
 .playerClass{
   display: grid;
-  grid-template-rows: 40% auto;
+  grid-template-rows: 65% auto;
   grid-template-columns: auto;
+  
+}
+.currentMusic{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+ 
 }
 i {
   width: 8vh;
-  font-size: 20px;
-  
+  font-size: 20px; 
   
 }
 button{
   margin-top: 3vh;
+}
+h2{
+  font-size: 18px;
 }
 
 @media screen and (min-width: 620px){
   
   i {
 font-size: 25px;  
+margin-left: 20px;
   
+}
+.currentMusic{
+  display: flex;
+  flex-direction: row;
+   align-items: center;
+  text-align: center;
+}
+h2{
+  font-size: 32px;
 }
 
 

@@ -2,7 +2,7 @@
   <main>
   
     <div class="top">
-      <div>
+      <div class="inputSearch">
       <input
         v-model="search"
         class="search-bar"
@@ -189,12 +189,12 @@ main{
    border-width: 5px;
    margin-right: 2vh;
    margin-top: 2vh;
-   margin-bottom: 1vh;
+   margin-bottom: 0vh;
  }
  .top{
    display: grid;
   grid-template-columns: auto;
-  grid-template-rows: 6em auto;
+  grid-template-rows: 70px auto;
  }
 
 
@@ -203,8 +203,6 @@ main{
 color: rgba(66,48,1,1);
 border-radius: 5px;
 border: 1px solid rgba(251,185,232,1);
-background: rgba(251,168,225,1); /* Bakgrundsfärg om övertoningen inte visas */
-/* Safari, iOS, Android */
 background: -webkit-linear-gradient(top,
 rgba(252,236,252,1) 0%,
 rgba(251,166,225,1) 50%,
