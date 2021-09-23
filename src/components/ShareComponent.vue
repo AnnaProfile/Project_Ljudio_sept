@@ -1,5 +1,6 @@
 <template>
 
+
 <div class="container">
   <div class="jumbotron">
     <h1>Share Your Music</h1>
@@ -20,6 +21,7 @@
         <button class="btn btn-primary" type="submit">Generate</button>
       </div>
     </form>
+
     <h3>Copy this link </h3><h3>{{theLink}}</h3>
 
     
@@ -99,6 +101,11 @@ data() {
 </script>
 <style scoped>
 .jumbotron{
+  display: flex;
+  
     background-color: rgb(136, 91, 91);
+}
+h3{
+  font-size: 20px;
 }
 </style>
